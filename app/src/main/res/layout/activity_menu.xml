@@ -8,14 +8,14 @@
 
     <Button
         android:id="@+id/btn_inventory"
-        android:layout_width="415dp"
-        android:layout_height="230dp"
+        android:layout_width="match_parent"
+        android:layout_height="236dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="-10dp"
-        android:layout_marginEnd="-4dp"
+        android:layout_marginEnd="0dp"
         android:text="INVENTORY"></Button>
 
     <Button
@@ -28,7 +28,8 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="281dp"
         android:layout_marginEnd="-1dp"
-        android:text="CREATE FRIDGE"></Button>
+        android:text="CREATE FRIDGE"
+        app:backgroundTint="#0099CC"></Button>
 
     <Button
         android:id="@+id/btn_recipes"
@@ -41,5 +42,6 @@
         android:layout_marginStart="-4dp"
         android:layout_marginEnd="-3dp"
         android:layout_marginBottom="-9dp"
-        android:text="RECIPES" />
+        android:text="RECIPES"
+        app:backgroundTint="#FF9966" />
 </RelativeLayout>

@@ -28,6 +28,17 @@ public class RegistrationActivity extends AppCompatActivity {
     private TextView warnName, warnAddress, newTxt;
     public static String fridgeString, addressString;
     String[] arr = {"FULL", "HALF-FULL", "EMPTY"};
+    String[] fruits = {"FULL", "HALF-FULL", "EMPTY"};
+    String[] veggies = {"FULL", "HALF-FULL", "EMPTY"};
+    String[] protein = {"FULL", "HALF-FULL", "EMPTY"};
+    String[] grains = {"FULL", "HALF-FULL", "EMPTY"};
+    String[] dairy = {"FULL", "HALF-FULL", "EMPTY"};
+    String[] cans = {"FULL", "HALF-FULL", "EMPTY"};
+    String[] snacks = {"FULL", "HALF-FULL", "EMPTY"};
+    String[] drinks = {"FULL", "HALF-FULL", "EMPTY"};
+    String[] sweets = {"FULL", "HALF-FULL", "EMPTY"};
+    String[] condiments = {"FULL", "HALF-FULL", "EMPTY"};
+
     Random random = new Random();
 
     @Override
@@ -40,7 +51,6 @@ public class RegistrationActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 initRegister();
 
                 LatLng addressLatLng = getLocationFromAddress(getApplicationContext(), addressString);
@@ -52,8 +62,27 @@ public class RegistrationActivity extends AppCompatActivity {
                 map.put("Lng", addressLatLng.longitude);
                 map.put("Address", addressString);
 
-                int select = random.nextInt(arr.length);
-                map.put("Inventory", arr[select]);
+                //int select = random.nextInt(arr.length);
+                //map.put("Inventory", arr[select]);
+                int select = random.nextInt(fruits.length);
+                map.put("Fruits", fruits[select]);
+                select = random.nextInt(veggies.length);
+                map.put("Veggies", veggies[select]);
+                select = random.nextInt(protein.length);
+                map.put("Protein", protein[select]);
+                select = random.nextInt(dairy.length);
+                map.put("Dairy", dairy[select]);
+                select = random.nextInt(cans.length);
+                map.put("Cans", cans[select]);
+                select = random.nextInt(snacks.length);
+                map.put("Snacks", snacks[select]);
+                select = random.nextInt(drinks.length);
+                map.put("Drinks", drinks[select]);
+                select = random.nextInt(sweets.length);
+                map.put("Sweets", sweets[select]);
+                select = random.nextInt(condiments.length);
+                map.put("Condiments", condiments[select]);
+
 
                 FirebaseDatabase.getInstance().getReference().child(fridgeString).setValue(map);
 
@@ -125,7 +154,5 @@ public class RegistrationActivity extends AppCompatActivity {
             Log.d("fail", "Failed to decode address");
         }
         return p1;
-
-
     }
 }

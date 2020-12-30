@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RecipeActivity">
-
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -19,7 +18,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginStart="92dp"
             android:layout_marginTop="653dp"
-            android:text="Pesto-y Roasted Vegetables Make Rent Week Bearable" />
+            android:text="Pesto-y Roasted Vegetables Make Rent Week Bearable"
+            app:backgroundTint="	#FF9966" />
 
         <Button
             android:id="@+id/fortyfive"
@@ -30,7 +30,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginStart="92dp"
             android:layout_marginTop="13dp"
-            android:text="45 Affordable Recipes for Rent Week and Beyond" />
+            android:text="45 Affordable Recipes for Rent Week and Beyond"
+            app:backgroundTint="	#FF9966" />
 
         <Button
             android:id="@+id/twentysix"
@@ -41,7 +42,8 @@
             android:layout_centerInParent="true"
             android:layout_marginStart="92dp"
             android:layout_marginTop="333dp"
-            android:text="26 Favorite Affordable-and-Easy Meals" />
+            android:text="26 Favorite Affordable-and-Easy Meals"
+            app:backgroundTint="	#FF9966" />
 
         <Button
             android:id="@+id/thirtyone"
@@ -52,7 +54,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginStart="92dp"
             android:layout_marginTop="173dp"
-            android:text="31 Affordable Dinner Ideas" />
+            android:text="31 Affordable Dinner Ideas"
+            app:backgroundTint="	#FF9966" />
 
         <Button
             android:id="@+id/chickenThighs"
@@ -63,7 +66,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginStart="92dp"
             android:layout_marginTop="493dp"
-            android:text="Teriyaki Chicken Thighs" />
+            android:text="Teriyaki Chicken Thighs"
+            app:backgroundTint="	#FF9966" />
 
         <Button
             android:id="@+id/honey"
@@ -74,7 +78,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginStart="92dp"
             android:layout_marginTop="813dp"
-            android:text="Honey Garlic Glazed Salmon" />
+            android:text="Honey Garlic Glazed Salmon"
+            app:backgroundTint="	#FF9966" />
 
         <Button
             android:id="@+id/lemon"
@@ -85,7 +90,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginStart="92dp"
             android:layout_marginTop="973dp"
-            android:text="Lemony Greens Soup" />
+            android:text="Lemony Greens Soup"
+            app:backgroundTint="	#FF9966" />
     </RelativeLayout>
 
 </ScrollView>

@@ -41,7 +41,7 @@ public class InventoryActivity extends AppCompatActivity {
 
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Information info = snapshot.getValue(Information.class);
-                    String txt = info.getAddress() + ": " + info.getInventory();
+                    String txt = info.getAddress() + "\nFruits: " + info.getFruits() + "\nVegetables: " + info.getVeggies() + "\nProtein: " + info.getProtein() + "\nDairy: " + info.getDairy() + "\nCanned: " + info.getCans() + "\nSnacks: " + info.getSnacks() + "\nDrinks: " + info.getDrinks() + "\nSweets: " + info.getSweets() + "\nCondiments: " + info.getCondiments();
                     list.add(txt);
                 }
                 adapter.notifyDataSetChanged();
