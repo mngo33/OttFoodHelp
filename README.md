@@ -8,7 +8,7 @@ Open the [download link](https://drive.google.com/file/d/1IYxx7hWY_PJsPai1Pv_5iG
 
 ## Inspiration
 
-As Canadians, we are blessed to be living in a country that provides us with so many opportunities and resources for our benefit. Even so, however, far too many of our citizens have to spend mental energy stressing over where their next meals are coming from. Even in a country as developed as Canada, 1 in 8 households are still food insecure. Our app aims to help those in need can locate any and all food resources available to them, starting with our hometown of  Ottawa, Ontario, to ensure nobody is left hungry.
+As Canadians, we are blessed to be living in a country that provides us with so many opportunities and resources for our benefit. However far too many of our citizens have to spend mental energy stressing over where their next meals are coming from. Even in a country as developed as Canada, 1 in 8 households are still food insecure. Our app aims to help those in need can locate any and all food resources available to them, starting with our hometown of  Ottawa, Ontario, to ensure nobody is left hungry.
 
 ## What it does
 
