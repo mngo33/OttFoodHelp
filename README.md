@@ -40,6 +40,6 @@ Our first hackathon taught each of us how to efficiently work as a team to creat
 
 In the future, we plan on adding several features, such as:
 
-* Geolocation of the user’s current location, and a list of recommended resources closest to them.
-* Moderation and validation of registered fridges.
-* Expansion outside of just Ottawa.
+* Geolocation of the user’s current location, and a list of recommended resources closest to them
+* Moderation and validation of registered fridges
+* Expansion outside of just Ottawa
