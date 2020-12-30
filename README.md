@@ -4,7 +4,7 @@ OttFoodHelp is an Android application that displays Ottawa foodbanks and allows 
 
 ## Installation
 
-Open the [download link](https://drive.google.com/file/d/1H_qN-Ke061tOZbWZ7ACqNU0cOeMi4YLH/view?usp=sharing) on an Android device to install the OttFoodHelp APK.
+Open the [download link](https://drive.google.com/file/d/1q4oNrjemwXvSNe4ag03K9D8-4oj_oodl/view?usp=sharing) on an Android device to install the OttFoodHelp APK.
 
 ## Inspiration
 
