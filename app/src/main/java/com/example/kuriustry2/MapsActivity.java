@@ -212,6 +212,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        //comment
         coordinates.clear();
         fridgeNames.clear();
         addresses.clear();
