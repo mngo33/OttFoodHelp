@@ -1,7 +1,5 @@
 package com.example.kuriustry2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.location.Address;
@@ -13,11 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -26,7 +27,8 @@ public class RegistrationActivity extends AppCompatActivity {
     private Button btnRegister;
     private TextView warnName, warnAddress, newTxt;
     public static String fridgeString, addressString;
-
+    String[] arr = {"FULL", "HALF-FULL", "EMPTY"};
+    Random random = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class RegistrationActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 initRegister();
 
                 LatLng addressLatLng = getLocationFromAddress(getApplicationContext(), addressString);
@@ -49,17 +52,25 @@ public class RegistrationActivity extends AppCompatActivity {
                 map.put("Lng", addressLatLng.longitude);
                 map.put("Address", addressString);
 
+                int select = random.nextInt(arr.length);
+                map.put("Inventory", arr[select]);
+
                 FirebaseDatabase.getInstance().getReference().child(fridgeString).setValue(map);
 
                 Intent intent = new Intent();
                 intent.putExtra("LatLng", addressLatLng);
                 setResult(RESULT_OK, intent);
-                finish();
+                openMapsActivity();
             }
         });
     }
 
-    private void initRegister () {
+    private void openMapsActivity() {
+        Intent intent = new Intent(this,MapsActivity.class);
+        startActivity(intent);
+    }
+
+    private void initRegister() {
         Log.d(TAG, "initRegister: Started");
 
         if (validateData()) {
@@ -70,13 +81,13 @@ public class RegistrationActivity extends AppCompatActivity {
 
     private boolean validateData() {
         Log.d(TAG, "initRegister: Started");
-        if(fridgeName.getText().toString().equals("")) {
+        if (fridgeName.getText().toString().equals("")) {
             warnName.setVisibility(View.VISIBLE);
             warnName.setText("Enter the fridge name");
             return false;
         }
 
-        if(addressName.getText().toString().equals("")) {
+        if (addressName.getText().toString().equals("")) {
             warnAddress.setVisibility(View.VISIBLE);
             warnAddress.setText("Enter the address");
             return false;
@@ -108,7 +119,7 @@ public class RegistrationActivity extends AppCompatActivity {
             }
             Address location = address.get(0);
 
-            p1 = new LatLng(location.getLatitude(), location.getLongitude() );
+            p1 = new LatLng(location.getLatitude(), location.getLongitude());
         } catch (Exception e) {
             e.printStackTrace();
             Log.d("fail", "Failed to decode address");
@@ -116,4 +127,5 @@ public class RegistrationActivity extends AppCompatActivity {
         return p1;
 
 
-    }}
+    }
+}

@@ -10,11 +10,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
@@ -42,6 +41,7 @@ import java.util.Map;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private Button button;
     Map<Double, Double> coordinates = new LinkedHashMap<>();
     ArrayList<String> fridgeNames = new ArrayList<>();
     ArrayList<String> addresses = new ArrayList<>();
@@ -51,10 +51,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        button = (Button) findViewById(R.id.btn_menu);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMenuActivity();
+            }
+
+        });
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
         reference.addValueEventListener(new ValueEventListener() {
@@ -96,7 +104,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 coordinates.clear();
                 fridgeNames.clear();
                 addresses.clear();
-
             }
 
             @Override
@@ -104,6 +111,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 Log.d("success", "Database error");
             }
         });
+    }
+
+    private void openMenuActivity() {
+        Intent intent = new Intent(this, MenuActivity.class);
+        intent.putExtra("string",fridgeNames);
+        startActivity(intent);
+        //overridePendingTransition(R.anim,slide_in_right,R.anim.slide_out_left);
     }
 
     @Override
@@ -212,7 +226,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        //comment
         coordinates.clear();
         fridgeNames.clear();
         addresses.clear();
