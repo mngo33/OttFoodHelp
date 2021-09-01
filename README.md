@@ -2,7 +2,7 @@
 
 OttFoodHelp is an Android application that displays Ottawa foodbanks and allows users to update an online database with community fridges.
 
-https://youtu.be/eI-cE1phe2k
+https://user-images.githubusercontent.com/75634260/131757420-6a6e0168-7400-47a0-9978-1ab900127979.mp4
 
 ## Installation
 
